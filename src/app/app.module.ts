@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 import { MathModule } from './shared/math.module';
 
@@ -13,7 +14,8 @@ import { MathModule } from './shared/math.module';
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,

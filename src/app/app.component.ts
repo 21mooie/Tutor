@@ -16,6 +16,7 @@ export class AppComponent {
   signedIn: boolean;
   user: any;
   greeting: string;
+  lastClicked: string;
 
   constructor(
     private amplifyService: AmplifyService,
@@ -43,5 +44,10 @@ export class AppComponent {
       .catch(err => console.log(err));
     console.log(this.user);
     this.router.navigate(['']);
+    this.lastClicked = null;
+  }
+
+  showActive(value){
+    this.lastClicked = value;
   }
 }
