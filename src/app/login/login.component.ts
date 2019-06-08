@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AmplifyService } from 'aws-amplify-angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +21,25 @@ export class LoginComponent implements OnInit {
     ],
     hiddenDefaults: ['phone_number']
   }
-  constructor() { }
+  signedIn: boolean;
+  user: any;
+  constructor( 
+    private amplifyService:AmplifyService,
+    private router: Router
+     ) { 
+    this.amplifyService.authStateChange$
+    .subscribe(authState => {
+      this.signedIn = authState.state === 'signedIn';
+      if (!authState.user) {
+        this.user = null;
+        console.log('not signed in anymore');
+      } else {
+        console.log(this.user);
+        this.user = authState.user;
+        this.router.navigate(['/home'])
+      }
+    });
+  }
 
   ngOnInit() {
   }
