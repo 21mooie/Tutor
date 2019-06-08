@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
       } else {
         console.log(this.user);
         this.user = authState.user;
-        this.router.navigate(['/home'])
+        // this.router.navigate(['/home'])
       }
     });
   }

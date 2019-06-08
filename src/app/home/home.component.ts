@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
       .then(data => console.log(data))
       .catch(err => console.log(err));
     console.log(this.user);
-    this.router.navigate(['']);
+    // this.router.navigate(['']);
   }
 
 }
