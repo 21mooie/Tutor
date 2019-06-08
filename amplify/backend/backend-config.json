@@ -1,0 +1,14 @@
+{
+	"auth": {
+		"tutorbe5e18c9": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation"
+		}
+	},
+	"storage": {
+		"dev": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}

@@ -1,0 +1,21 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "tutor-dev-20190608123403-authRole",
+            "UnauthRoleArn": "arn:aws:iam::533107625001:role/tutor-dev-20190608123403-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::533107625001:role/tutor-dev-20190608123403-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "tutor-dev-20190608123403-deployment",
+            "UnauthRoleName": "tutor-dev-20190608123403-unauthRole",
+            "StackName": "tutor-dev-20190608123403",
+            "StackId": "arn:aws:cloudformation:us-east-1:533107625001:stack/tutor-dev-20190608123403/3a7af200-8a0b-11e9-9452-0a129e2750f4"
+        },
+        "categories": {
+            "auth": {
+                "tutorbe5e18c9": {
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"2474011505971374\",\"client_secret\":\"c7e4862c17e7d837deb27ea409325562\"},{\"ProviderName\":\"Google\",\"client_id\":\"514541177755-qjrju1trvvi8ok95ci5t93tpebn8llv2.apps.googleusercontent.com\",\"client_secret\":\"6GXTOwX6xyoVunhvcUMNzsST\"}]"
+                }
+            }
+        }
+    }
+}
