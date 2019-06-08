@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">Tutor</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -7,14 +7,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#">Problems <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">Articles</a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown" *ngIf="signedIn">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
+            Profile
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">Action</a>
@@ -23,11 +23,11 @@
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
+        <li class="nav-item" *ngIf="signedIn">
+          <a class="nav-link disabled" href="#">Friends</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
+      <form *ngIf="signedIn" class="form-inline my-2 my-lg-0 mr-sm-3">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
@@ -39,11 +39,11 @@
 
 <div [appMath]="mathMl"></div>
 
-<footer class="page-footer font-small blue">
+<footer class="page-footer font-small bs-footer">
 
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2018 Copyright:
-      <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+      <a href="https://mdbootstrap.com/education/bootstrap/">Tutor</a>
     </div>
     <!-- Copyright -->
   
