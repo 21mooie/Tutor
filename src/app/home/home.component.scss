@@ -12,7 +12,7 @@ background-size: cover;
 }
 
 .center {
-  position: relative;
+  position: absolute;
   left: 0;
   top: 50%;
   width: 100%;
@@ -24,4 +24,16 @@ background-size: cover;
   position: relative;
   height: 100%;
   background-color: rgba(0,10,20,.6);
+}
+
+.btn-outline-white {
+	color: white;
+    border-color: white;
+    &:hover , &:active {
+        background-color: black;
+    }
+}
+
+.mt-4 {
+  margin-top: 20px;
 }

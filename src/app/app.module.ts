@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,16 +10,19 @@ import { HomeComponent } from './home/home.component';
 import { CategoriesComponent } from './categories/categories.component';
 
 import { MathModule } from './shared/math.module';
+import { QuestionsComponent } from './questions/questions.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    QuestionsComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AmplifyAngularModule,
     AppRoutingModule,
     MathModule.forRoot()
