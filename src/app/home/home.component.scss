@@ -1,0 +1,27 @@
+.bg {
+/* The image used */
+background: url(./../../assets/images/learning.jpg);
+
+/* Full height */
+height: 100%; 
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+.center {
+  position: relative;
+  left: 0;
+  top: 50%;
+  width: 100%;
+	text-align: center;
+	color: white;
+}
+
+.mask {
+  position: relative;
+  height: 100%;
+  background-color: rgba(0,10,20,.6);
+}

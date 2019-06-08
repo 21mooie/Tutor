@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AmplifyService } from 'aws-amplify-angular';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,13 +6,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  user: any;
+  
+  constructor() {}
 
-  constructor(
-    private amplifyService: AmplifyService,
-  ) { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
