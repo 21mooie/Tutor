@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 
+import { MathModule } from './shared/math.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NavComponent } from './nav/nav.component';
   imports: [
     BrowserModule,
     AmplifyAngularModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MathModule.forRoot()
   ],
   providers: [
     AmplifyService
