@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { NavComponent } from './nav/nav.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
