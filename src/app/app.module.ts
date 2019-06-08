@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
 import { LoginComponent } from './login/login.component';
 
+import { MathModule } from './shared/math.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     AmplifyAngularModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MathModule.forRoot()
   ],
   providers: [
     AmplifyService
