@@ -9,13 +9,15 @@ import { HomeComponent } from './home/home.component';
 import { CategoriesComponent } from './categories/categories.component';
 
 import { MathModule } from './shared/math.module';
+import { QuestionsComponent } from './questions/questions.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    QuestionsComponent
   ],
   imports: [
     BrowserModule,
