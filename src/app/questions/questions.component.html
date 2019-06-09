@@ -1,3 +1,8 @@
-<p>
-  questions works!
-</p>
+<div class="container" *ngIf="isQuestionReady">
+    <div [appMath]="currentQuestion.question"></div>
+    <div [appMath]="currentQuestion.choice1"></div>
+    <div [appMath]="currentQuestion.choice2"></div>
+    <div [appMath]="currentQuestion.choice3"></div>
+    <div [appMath]="currentQuestion.choice4"></div>
+    <div [appMath]="currentQuestion.choice5"></div>
+</div>

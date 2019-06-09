@@ -6,17 +6,16 @@ import { HttpClient, HttpParams } from '@angular/common/http';
   providedIn: 'root'
 })
 export class QuestionService {
-  private _url = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
 
   getQuestionByCategory(mainCategoryName: string, subCategoryName: string) {
-    this._url = this._url + '/getQuestions';
+    const url = 'http://localhost:3000' + '/getQuestions/category';
     let params = new HttpParams();
     params = params.set('mainCategory', mainCategoryName);
     params = params.set('subCategory', subCategoryName);
 
-    return this.http.get(this._url, {params: params});
+    return this.http.get(url, {params: params});
   }
 
   getSubCategories(category) {
