@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { SubcategoriesComponent } from './subcategories/subcategories.component';
+import { DevelopmentComponent } from './development/development.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,18 @@ const routes: Routes = [
   {
     path: 'questions',
     component: QuestionsComponent
+  },
+  {
+    path: 'articles',
+    component: DevelopmentComponent
+  },
+  {
+    path: 'profile',
+    component: DevelopmentComponent
+  },
+  {
+    path: 'friends',
+    component: DevelopmentComponent
   },
   {
     path: '',

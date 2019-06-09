@@ -13,6 +13,7 @@ import { MathModule } from './shared/math.module';
 import { QuestionsComponent } from './questions/questions.component';
 import { SubcategoriesComponent } from './subcategories/subcategories.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DevelopmentComponent } from './development/development.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     CategoriesComponent,
     QuestionsComponent,
-    SubcategoriesComponent
+    SubcategoriesComponent,
+    DevelopmentComponent
   ],
   imports: [
     ReactiveFormsModule,

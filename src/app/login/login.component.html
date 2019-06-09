@@ -7,10 +7,10 @@
     <input type="password" class="form-control inputs" formControlName="pwd" placeholder="Password">
     <button class="btn btn-lg btn-primary btn-block mt-2" type="submit">Submit</button>
         
-        <div class="col-sm mt-2">
+        <div class="col-sm-6 mt-2 mx-auto">
             <p *ngIf="onLogin">No account?</p>
-            <button class= "btn btn-block btn-secondary" *ngIf="onLogin" (click)="toggleSignup(true)">Create Account</button>
-            <button class= "btn btn-block btn-secondary" *ngIf="!onLogin" (click)="toggleSignup(false)">Back to Login</button>
+            <button class= "btn btn-block btn-secondary btn-sm" *ngIf="onLogin" (click)="toggleSignup(true)">Create Account</button>
+            <button class= "btn btn-block btn-secondary btn-sm" *ngIf="!onLogin" (click)="toggleSignup(false)">Back to Login</button>
         </div>
         
 </form>
