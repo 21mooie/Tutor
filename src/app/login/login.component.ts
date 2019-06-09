@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AmplifyService } from 'aws-amplify-angular';
 import { Router } from '@angular/router';
+import { FormGroup, FormControl } from '@angular/forms';
+import { Auth } from 'aws-amplify';
 
 @Component({
   selector: 'app-login',
@@ -8,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  onLogin = true;
   signUpConfig = {
     signUpFields: [
       {
@@ -23,6 +26,10 @@ export class LoginComponent implements OnInit {
   }
   signedIn: boolean;
   user: any;
+  loginForm = new FormGroup({
+    email: new FormControl(''),
+    pwd: new FormControl('')
+  });
   constructor( 
     private amplifyService:AmplifyService,
     private router: Router
@@ -42,6 +49,30 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  submitForm() {
+    console.log(this.loginForm);
+    const email: string = this.loginForm.controls['email'].value;
+    const pwd = this.loginForm.controls['pwd'].value;
+    if (this.onLogin) {
+      Auth.signIn(email, pwd)
+        .then(user => console.log(user))
+        .catch(err => console.log(err));
+      console.log('submitted');
+    }
+    else {
+      let username = email;
+      let password = pwd;
+      Auth.signUp({username, password})
+        .then(data => console.log(data))
+        .catch(err => console.log(err));
+    }
+    
+  }
+
+  toggleSignup(value) {
+    this.onLogin = !this.onLogin;
   }
 
 }

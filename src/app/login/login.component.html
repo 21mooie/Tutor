@@ -1,1 +1,16 @@
-<amplify-authenticator [signUpConfig]="signUpConfig"></amplify-authenticator>
+<form class="form-signin text-center" [formGroup]="loginForm" (ngSubmit)="submitForm()">
+    <h1 *ngIf="onLogin" class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <h1 *ngIf="!onLogin" class="h3 mb-3 font-weight-normal">Create new account</h1>
+    <label for="inputEmail" class="sr-only">Email</label>
+    <input id="inputEmail" class="form-control inputs" type="email" formControlName="email" placeholder="Email Address">
+    <label for="inputPassword" class="sr-only">Password</label>    
+    <input type="password" class="form-control inputs" formControlName="pwd" placeholder="Password">
+    <button class="btn btn-lg btn-primary btn-block mt-2" type="submit">Submit</button>
+        
+        <div class="col-sm mt-2">
+            <p *ngIf="onLogin">No account?</p>
+            <button class= "btn btn-block btn-secondary" *ngIf="onLogin" (click)="toggleSignup(true)">Create Account</button>
+            <button class= "btn btn-block btn-secondary" *ngIf="!onLogin" (click)="toggleSignup(false)">Back to Login</button>
+        </div>
+        
+</form>

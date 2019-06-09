@@ -30,7 +30,7 @@ export class AppComponent {
                 if (!authState.user) {
                     this.user = null;
                 } else {
-                    // console.log(this.user);
+                    console.log(this.user);
                     this.user = authState.user;
                     this.greeting = "Hello " + this.user.username;
                 }

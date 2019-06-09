@@ -27,13 +27,21 @@
           <a class="nav-link" href="#">Friends</a>
         </li>
       </ul>
-      <a *ngIf="!signedIn" [routerLink]="['/login']">Login</a>
-      <a *ngIf="signedIn" [routerLink]="['/']"(click)="signOut()">Logout</a>
+    
+      <ul class="nav justify-content-end">
+      <li *ngIf="signedIn" class="mr-2 text-muted">
+        {{ user.attributes.email }}
+      </li>
+       <li class="nav-item">
+          <a *ngIf="!signedIn" [routerLink]="['/login']">Login</a>
+          <a *ngIf="signedIn" [routerLink]="['/']"(click)="signOut()">Logout</a>
+       </li>
+      </ul>
     </div>
 </nav>
 <router-outlet></router-outlet>
 
-<footer class="page-footer font-small bs-footer">
+<footer class="page-footer bs-footer">
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2019 Copyright:
