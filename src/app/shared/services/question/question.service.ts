@@ -22,7 +22,7 @@ export class QuestionService {
     switch(category) {
       case 'arithmetic':
         return arithmeticSubCategoriesDisplay;
-      case 'alegbra':
+      case 'algebra':
         return algebraSubCategoriesDisplay;
       case 'calculus':
         return calculusSubCategoriesDisplay;
