@@ -1,20 +1,22 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { arithmeticSubCategoriesDisplay, algebraSubCategoriesDisplay, calculusSubCategoriesDisplay, subCategoryMap } from '../../objects/subCategories';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuestionService {
-  private _url = 'https://math.ly/api/v1';
+  private _url = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
 
   getQuestionByCategory(mainCategoryName: string, subCategoryName: string) {
-    this._url = this._url + '/' + mainCategoryName + '/' + subCategoryName + '.json'
+    this._url = this._url + '/getQuestions';
+    let params = new HttpParams();
+    params = params.set('mainCategory', mainCategoryName);
+    params = params.set('subCategory', subCategoryName);
 
-    return this.http.get(this._url);
-    
+    return this.http.get(this._url, {params: params});
   }
 
   getSubCategories(category) {
