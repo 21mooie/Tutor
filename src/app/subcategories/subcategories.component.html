@@ -1,8 +1,7 @@
-<a [routerLink]="['/categories']">Back</a>
 <div class="container">
   <div class="row">
     <div class="col" *ngFor="let sub of subCategories">
-      <a (click)="routeToQuestion(category, sub)"> {{ sub }}</a>
+      <a (click)="routeToQuestion(category, sub)" class="pointer"> {{ sub }}</a>
     </div>
   </div>
 </div>
