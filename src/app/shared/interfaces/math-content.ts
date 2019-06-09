@@ -11,4 +11,5 @@ export interface MathQuestion {
   choice4: MathContent;
   choice5: MathContent;
   correctChoice: number;
+  instruction: string;
 }
