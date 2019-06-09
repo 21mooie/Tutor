@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { QuestionService } from '../shared/services/question/question.service';
 import { MathQuestion } from '../shared/interfaces/math-content';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-questions',
@@ -16,9 +17,13 @@ export class QuestionsComponent implements OnInit {
     choice3: {mathml: `<math xmlns="http://www.w3.org/1998/Math/MathML">`},
     choice4: {mathml: `<math xmlns="http://www.w3.org/1998/Math/MathML">`},
     choice5: {mathml: `<math xmlns="http://www.w3.org/1998/Math/MathML">`},
-    correctChoice: 0
+    correctChoice: 0,
+    instruction: ''
   };
+  questionsFormGroup: FormGroup;
   isQuestionReady = false;
+  correctAnswer = false;
+  wrongAnswer = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,6 +31,14 @@ export class QuestionsComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+    this.questionsFormGroup = new FormGroup({
+      answer: new FormControl('', Validators.required)
+    });
+    this.fetchQuestion();
+  }
+
+  fetchQuestion() {
+    this.isQuestionReady = false;
     this.questionService.getQuestionByCategory('algebra', 'linear-equations')
       .subscribe(data => {
         this.processResponse(data);
@@ -37,6 +50,7 @@ export class QuestionsComponent implements OnInit {
   processResponse(data) {
     this.currentQuestion.question.mathml += data.question + '</math>';
     this.currentQuestion.correctChoice = data['correct_choice'];
+    this.currentQuestion.instruction = data.instruction;
     let i = 1;
     for (const choice of data.choices) {
       const currentChoice = 'choice' + i;
@@ -44,6 +58,24 @@ export class QuestionsComponent implements OnInit {
       i++;
     }
     this.isQuestionReady = true;
+  }
+
+  onSubmit() {
+    this.correctAnswer = false;
+    this.wrongAnswer = false;
+    const selectedAnswer = this.questionsFormGroup.controls['answer'].value;
+    if (selectedAnswer === this.currentQuestion.correctChoice.toString()) {
+      this.correctAnswer = true;
+    } else {
+      this.wrongAnswer = true;
+    }
+  }
+
+  fetchNextQuestion() {
+    this.correctAnswer = false;
+    this.wrongAnswer = false;
+    this.questionsFormGroup.controls['answer'].setValue('');
+    this.fetchQuestion();
   }
 
 }
