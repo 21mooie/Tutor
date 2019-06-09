@@ -24,6 +24,8 @@ export class QuestionsComponent implements OnInit {
   isQuestionReady = false;
   correctAnswer = false;
   wrongAnswer = false;
+  category = '';
+  subCategory = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -34,12 +36,16 @@ export class QuestionsComponent implements OnInit {
     this.questionsFormGroup = new FormGroup({
       answer: new FormControl('', Validators.required)
     });
-    this.fetchQuestion();
+    this.route.queryParams.subscribe(params => {
+      this.category = params['category'];
+      this.subCategory = params['subcategory'];
+      this.fetchQuestion();
+  });
   }
 
   fetchQuestion() {
     this.isQuestionReady = false;
-    this.questionService.getQuestionByCategory('algebra', 'linear-equations')
+    this.questionService.getQuestionByCategory(this.category, this.subCategory)
       .subscribe(data => {
         this.processResponse(data);
       }, error => {
