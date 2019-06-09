@@ -11,6 +11,7 @@ import { CategoriesComponent } from './categories/categories.component';
 
 import { MathModule } from './shared/math.module';
 import { QuestionsComponent } from './questions/questions.component';
+import { SubcategoriesComponent } from './subcategories/subcategories.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { QuestionsComponent } from './questions/questions.component';
     LoginComponent,
     HomeComponent,
     CategoriesComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    SubcategoriesComponent
   ],
   imports: [
     BrowserModule,

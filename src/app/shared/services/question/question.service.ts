@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { arithmeticSubCategoriesDisplay, algebraSubCategoriesDisplay, calculusSubCategoriesDisplay, subCategoryMap } from '../../objects/subCategories';
 
 @Injectable({
   providedIn: 'root'
@@ -14,5 +15,21 @@ export class QuestionService {
 
     return this.http.get(this._url);
     
+  }
+
+  getSubCategories(category) {
+    switch(category) {
+      case 'arithmetic':
+        return arithmeticSubCategoriesDisplay;
+      case 'alegbra':
+        return algebraSubCategoriesDisplay;
+      case 'calculus':
+        return calculusSubCategoriesDisplay;
+      default:
+    }
+  }
+
+  getSubCategoryRequest(category) {
+    return subCategoryMap[category];
   }
 }

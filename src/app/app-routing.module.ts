@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { QuestionsComponent } from './questions/questions.component';
+import { SubcategoriesComponent } from './subcategories/subcategories.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'categories',
     component: CategoriesComponent
+  },
+  {
+    path: 'categories/:sub',
+    component: SubcategoriesComponent
   },
   {
     path: 'questions',
