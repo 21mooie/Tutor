@@ -1,8 +1,19 @@
 .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
     background-color: #f5f5f5;
     text-align: center;
-  }
+  } 
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header,
+.footer {
+    flex-shrink: 0;
+}
+
+.body {
+  flex-grow: 1;
+}

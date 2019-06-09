@@ -13,7 +13,6 @@ import { CategoriesComponent } from './categories/categories.component';
 import { MathModule } from './shared/math.module';
 import { QuestionsComponent } from './questions/questions.component';
 import { SubcategoriesComponent } from './subcategories/subcategories.component';
-import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
